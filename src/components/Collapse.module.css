@@ -1,0 +1,25 @@
+.collapse {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.collapseOpen {
+  grid-template-rows: 1fr;
+}
+
+.collapseInner {
+  overflow: hidden;
+  min-height: 0;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition:
+    opacity 0.22s ease,
+    transform 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.collapseOpen > .collapseInner {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.04s;
+}

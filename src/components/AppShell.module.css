@@ -1,0 +1,82 @@
+.shell {
+  width: min(100% - 2rem, var(--max-width));
+  margin: 0 auto;
+  padding: 2.5rem 0 4rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.brandTitle {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 5vw, 2.6rem);
+  font-weight: 500;
+  line-height: 1.05;
+  color: var(--color-text-bright);
+}
+
+.brandTitle span {
+  color: var(--color-accent);
+}
+
+.brandSubtitle {
+  margin-top: 0.5rem;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  max-width: 28rem;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.5rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.navLink {
+  position: relative;
+  padding: 0.7rem 0;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+
+.navLink::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.navLink:hover {
+  color: var(--color-text-bright);
+  text-decoration: none;
+}
+
+.navLink:hover::after,
+.navLinkActive::after {
+  transform: scaleX(1);
+}
+
+.navLinkActive {
+  color: var(--color-text-bright);
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
